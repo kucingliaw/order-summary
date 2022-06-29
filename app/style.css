@@ -151,6 +151,8 @@ a {
 
     .card__text {
         padding: 40px;
+        width: 90%;
+        margin: 0 auto;
     }
 
     .card__order {
