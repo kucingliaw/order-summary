@@ -1,0 +1,159 @@
+:root {
+    --bg-color: hsl(225, 100%, 94%);
+    --dark-color: hsl(223, 47%, 23%);
+    --accent-color: hsl(245, 75%, 52%);
+    --white: hsl(0, 0%, 100%);
+    --lighter-color: hsl(225, 100%, 98%);
+    --light-color: hsl(224, 23%, 55%);
+    --font: 'Red Hat Display', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+    font-family: var(--font);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(./images/pattern-background-mobile.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+a {
+    font-family: inherit;
+    display: block;
+}
+
+.card {
+    width: min(90%, 400px);
+    margin: auto;
+
+    background-color: var(--white);
+    text-align: center;
+
+    border-radius: 20px;
+}
+
+.card__img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.card__text {
+    padding: 20px;
+}
+
+.card__title {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.card__description {
+    font-weight: 500;
+    line-height: 1.8;
+    color: var(--light-color);
+
+    margin: 1rem 0;
+}
+
+.card__order,
+.card__order--left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__order {
+    margin: 2rem 0;
+    padding: 0 1rem;
+}
+
+.card__order--left {
+    gap: 1rem;
+}
+
+.order__detail {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.25rem;
+}
+
+.order__detail--plan {
+    font-weight: 900;
+}
+
+.order__detail--price {
+    font-weight: 500;
+    color: var(--light-color);
+}
+
+.order__change {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-underline-offset: 1px;
+    transition: 0.3s all;
+}
+
+.order__change:hover {
+    color: hsla(245, 75%, 52%, 0.795);
+}
+
+.card__pay,
+.card__cancel {
+    padding: 1rem;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s all;
+}
+
+.card__pay {
+    background-color: var(--accent-color);
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.075);
+}
+
+.card__pay:hover {
+    background-color: rgb(25, 12, 172);
+}
+
+.card__cancel {
+    margin-top: 0.75rem;
+    color: var(--light-color);
+    z-index: 10;
+}
+
+.card__cancel:hover {
+    background-color: rgb(241, 240, 240);
+}
+
+@media (min-width: 400px) {
+    body {
+        background-image: url(images/pattern-background-desktop.svg);
+        background-position: top;
+    }
+
+    .card__text {
+        padding: 40px;
+    }
+
+    .card__order {
+        margin: 3rem 0;
+    }
+}
